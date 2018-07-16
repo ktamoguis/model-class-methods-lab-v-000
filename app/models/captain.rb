@@ -5,6 +5,9 @@ class Captain < ActiveRecord::Base
   end
 
   def self.sailors
+    joins(:boats)
+    .joins(:classifications)
+    .where("classifications.name = ?", 'Sailboat')
   end
 
   def self.talented_seafarers
