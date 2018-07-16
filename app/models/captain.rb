@@ -7,7 +7,7 @@ class Captain < ActiveRecord::Base
     def self.sailors
       #binding.pry
       includes(boats: :classifications)
-      .where(classifications: {name: 'Sailboat'})
+      .where(classifications: {name: 'Sailboat'}).uniq
     end
 
   def self.talented_seafarers
