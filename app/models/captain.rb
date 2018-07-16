@@ -7,7 +7,7 @@ class Captain < ActiveRecord::Base
   def self.sailors
     binding.pry
     joins(:boats)
-    .joins(:classifications)
+    .joins(:boat_classifications)
     .where("classifications.name = ?", 'Sailboat')
   end
 
