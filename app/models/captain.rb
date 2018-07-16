@@ -7,7 +7,7 @@ class Captain < ActiveRecord::Base
   def self.sailors
     binding.pry
     joins(:boats)
-    Boat.sailboats
+    where(boats: Boat.sailboats)
   end
 
   def self.talented_seafarers
